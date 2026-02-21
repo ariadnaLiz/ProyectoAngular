@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+
+    <product>
+        <id>6</id>
+        <name>Cámara IP WiFi 1080p</name>
+        <price>699.00</price>
+        <imageUrl>https://example.com/images/ip-camera-1080p.jpg</imageUrl>
+        <category>Seguridad</category>
+        <description>Cámara IP para activación lógica por eventos y análisis en la nube.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>7</id>
+        <name>Sensor de Corriente No Invasivo</name>
+        <price>219.00</price>
+        <imageUrl>https://example.com/images/current-sensor.jpg</imageUrl>
+        <category>Energía</category>
+        <description>Medición de consumo eléctrico sin cortar el cableado principal.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>8</id>
+        <name>Sensor de Temperatura DHT11</name>
+        <price>59.00</price>
+        <imageUrl>https://example.com/images/dht11.jpg</imageUrl>
+        <category>Sensores</category>
+        <description>Sensor básico de temperatura y humedad para monitoreo ambiental.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>9</id>
+        <name>Sensor de Presencia (PIR) Mini</name>
+        <price>74.00</price>
+        <imageUrl>https://example.com/images/pir-mini.jpg</imageUrl>
+        <category>Sensores</category>
+        <description>Versión compacta para instalaciones discretas en interiores.</description>
+        <inStock>false</inStock>
+    </product>
+
+    <product>
+        <id>10</id>
+        <name>Fuente de Alimentación 5V 2A</name>
+        <price>119.00</price>
+        <imageUrl>https://example.com/images/psu-5v-2a.jpg</imageUrl>
+        <category>Accesorios</category>
+        <description>Fuente estable para microcontroladores y sensores en proyectos IoT.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>11</id>
+        <name>Kit Cables Dupont (120 pzas)</name>
+        <price>99.00</price>
+        <imageUrl>https://example.com/images/dupont-kit.jpg</imageUrl>
+        <category>Accesorios</category>
+        <description>Cables macho-hembra para prototipado rápido en breadboard.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>12</id>
+        <name>Protoboard 830 puntos</name>
+        <price>89.00</price>
+        <imageUrl>https://example.com/images/breadboard-830.jpg</imageUrl>
+        <category>Accesorios</category>
+        <description>Base de prototipado para pruebas rápidas sin soldadura.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>13</id>
+        <name>Módulo Relevador 1 Canal 5V</name>
+        <price>69.00</price>
+        <imageUrl>https://example.com/images/relay-1ch.jpg</imageUrl>
+        <category>Actuadores</category>
+        <description>Control de cargas AC/DC mediante señal digital desde el microcontrolador.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>14</id>
+        <name>Zumbador XS-191 + Interfaz de Potencia</name>
+        <price>139.00</price>
+        <imageUrl>https://example.com/images/xs-191-buzzer.jpg</imageUrl>
+        <category>Actuadores</category>
+        <description>Alerta sonora con etapa de potencia para activación segura.</description>
+        <inStock>true</inStock>
+    </product>
+
+    <product>
+        <id>15</id>
+        <name>LED Indicador 5mm (Pack 50)</name>
+        <price>79.00</price>
+        <imageUrl>https://example.com/images/led-pack.jpg</imageUrl>
+        <category>Componentes</category>
+        <description>Indicadores visuales para estados de sistema (alto/medio/bajo).</description>
+        <inStock>true</inStock>
+    </product>
+
+</products>

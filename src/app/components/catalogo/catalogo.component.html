@@ -1,0 +1,10 @@
+<header class = "header">
+    <h1> Catálogo 2</h1>
+</header>
+<section class="grid">
+  @for (p of products(); track p.id) {
+    <app-producto [product]="p"></app-producto>
+  } @empty {
+    <p>No hay productos.</p>
+  }
+</section>
