@@ -18,13 +18,15 @@ export class ProductsService {
   }
 
   private parseProductsXml(xmlText: string): Product[] {
-    // Si estamos en el servidor (SSR), no hay DOMParser disponible
-    if (!isPlatformBrowser(this.platformId)) {
-      return [];
-    }
+    let doc: Document;
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlText, 'application/xml');
+    if (isPlatformBrowser(this.platformId)) {
+      const parser = new DOMParser();
+      doc = parser.parseFromString(xmlText, 'application/xml');
+    } else {
+      const { DOMParser: ServerDOMParser } = require('xmldom');
+      doc = new ServerDOMParser().parseFromString(xmlText, 'application/xml');
+    }
 
     if (doc.getElementsByTagName('parsererror').length > 0) {
       return [];
@@ -33,13 +35,13 @@ export class ProductsService {
     const nodes = Array.from(doc.getElementsByTagName('product'));
 
     return nodes.map((node) => ({
-      id: this.getNumber(node, 'id'),
-      name: this.getText(node, 'name'),
-      price: this.getNumber(node, 'price'),
-      imageUrl: this.getText(node, 'imageUrl'),
-      category: this.getText(node, 'category'),
-      description: this.getText(node, 'description'),
-      inStock: this.getBoolean(node, 'inStock'),
+      id: this.getNumber(node as Element, 'id'),
+      name: this.getText(node as Element, 'name'),
+      price: this.getNumber(node as Element, 'price'),
+      imageUrl: this.getText(node as Element, 'imageUrl'),
+      category: this.getText(node as Element, 'category'),
+      description: this.getText(node as Element, 'description'),
+      inStock: this.getBoolean(node as Element, 'inStock'),
     }));
   }
 

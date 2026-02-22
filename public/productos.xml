@@ -5,7 +5,7 @@
         <id>6</id>
         <name>Cámara IP WiFi 1080p</name>
         <price>699.00</price>
-        <imageUrl>https://example.com/images/ip-camera-1080p.jpg</imageUrl>
+        <imageUrl>https://http2.mlstatic.com/D_NQ_NP_2X_944401-MLA99419192208_112025-F.webp</imageUrl>
         <category>Seguridad</category>
         <description>Cámara IP para activación lógica por eventos y análisis en la nube.</description>
         <inStock>true</inStock>
@@ -15,7 +15,7 @@
         <id>7</id>
         <name>Sensor de Corriente No Invasivo</name>
         <price>219.00</price>
-        <imageUrl>https://example.com/images/current-sensor.jpg</imageUrl>
+        <imageUrl>https://robu.in/wp-content/uploads/2017/04/30A-SCT-013-030-Non-invasive-AC-Current-font-b-Sensor-b-font-Split-Core-Current-768x768.jpg</imageUrl>
         <category>Energía</category>
         <description>Medición de consumo eléctrico sin cortar el cableado principal.</description>
         <inStock>true</inStock>
@@ -25,7 +25,7 @@
         <id>8</id>
         <name>Sensor de Temperatura DHT11</name>
         <price>59.00</price>
-        <imageUrl>https://example.com/images/dht11.jpg</imageUrl>
+        <imageUrl>https://uk.robotshop.com/cdn/shop/files/dht11-temperature-humidity-sensor-module.webp?v=1720516978&amp;width=1024</imageUrl>
         <category>Sensores</category>
         <description>Sensor básico de temperatura y humedad para monitoreo ambiental.</description>
         <inStock>true</inStock>
@@ -35,7 +35,7 @@
         <id>9</id>
         <name>Sensor de Presencia (PIR) Mini</name>
         <price>74.00</price>
-        <imageUrl>https://example.com/images/pir-mini.jpg</imageUrl>
+        <imageUrl>https://cdn11.bigcommerce.com/s-2fbyfnm8ev/images/stencil/1280x1280/products/288/1411/1899005-11__81158.1539996060.jpg?c=2</imageUrl>
         <category>Sensores</category>
         <description>Versión compacta para instalaciones discretas en interiores.</description>
         <inStock>false</inStock>
@@ -45,7 +45,7 @@
         <id>10</id>
         <name>Fuente de Alimentación 5V 2A</name>
         <price>119.00</price>
-        <imageUrl>https://example.com/images/psu-5v-2a.jpg</imageUrl>
+        <imageUrl>https://www.robotshop.com/cdn/shop/files/wall-adapter-power-supply-5v-dc-2a-usb-micro-b-1.webp?v=1720525134&amp;width=1024</imageUrl>
         <category>Accesorios</category>
         <description>Fuente estable para microcontroladores y sensores en proyectos IoT.</description>
         <inStock>true</inStock>
@@ -55,7 +55,7 @@
         <id>11</id>
         <name>Kit Cables Dupont (120 pzas)</name>
         <price>99.00</price>
-        <imageUrl>https://example.com/images/dupont-kit.jpg</imageUrl>
+        <imageUrl>https://http2.mlstatic.com/D_NQ_NP_2X_869406-MLM98638992571_112025-F-cables-dupont-jumpers-arduino-30cm-40piezas.webp</imageUrl>
         <category>Accesorios</category>
         <description>Cables macho-hembra para prototipado rápido en breadboard.</description>
         <inStock>true</inStock>
@@ -65,7 +65,7 @@
         <id>12</id>
         <name>Protoboard 830 puntos</name>
         <price>89.00</price>
-        <imageUrl>https://example.com/images/breadboard-830.jpg</imageUrl>
+        <imageUrl>https://robu.in/wp-content/uploads/2016/11/mb102-830-point-solderless-pcb-bread-board.jpg</imageUrl>
         <category>Accesorios</category>
         <description>Base de prototipado para pruebas rápidas sin soldadura.</description>
         <inStock>true</inStock>
@@ -75,7 +75,7 @@
         <id>13</id>
         <name>Módulo Relevador 1 Canal 5V</name>
         <price>69.00</price>
-        <imageUrl>https://example.com/images/relay-1ch.jpg</imageUrl>
+        <imageUrl>https://electrobes.com/wp-content/uploads/2019/05/Single-channel-5v-relay-module-low-trigger-240VAc-10A-relay-module-in-Pakistan-768x768.jpg?v=1754062481</imageUrl>
         <category>Actuadores</category>
         <description>Control de cargas AC/DC mediante señal digital desde el microcontrolador.</description>
         <inStock>true</inStock>
@@ -85,7 +85,7 @@
         <id>14</id>
         <name>Zumbador XS-191 + Interfaz de Potencia</name>
         <price>139.00</price>
-        <imageUrl>https://example.com/images/xs-191-buzzer.jpg</imageUrl>
+        <imageUrl>https://kitsguru.com/cdn/shop/files/ActivePCBBuzzer5V10mm_720x.jpg?v=1712034288</imageUrl>
         <category>Actuadores</category>
         <description>Alerta sonora con etapa de potencia para activación segura.</description>
         <inStock>true</inStock>
@@ -95,7 +95,7 @@
         <id>15</id>
         <name>LED Indicador 5mm (Pack 50)</name>
         <price>79.00</price>
-        <imageUrl>https://example.com/images/led-pack.jpg</imageUrl>
+        <imageUrl>https://thepihut.com/cdn/shop/products/diffused-5mm-led-pack-5-leds-each-in-5-colors-25-pack-the-pi-hut-104246-28609639186627_800x.jpg?v=1646588714</imageUrl>
         <category>Componentes</category>
         <description>Indicadores visuales para estados de sistema (alto/medio/bajo).</description>
         <inStock>true</inStock>
