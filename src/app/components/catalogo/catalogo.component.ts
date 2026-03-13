@@ -1,27 +1,32 @@
-import { Component, Signal, inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { of } from 'rxjs';
-
-import { ProductCardComponent } from '../producto/producto.component';
-import { ProductsService } from '../../services/productos.service';
+import { Component, computed, signal } from '@angular/core';
 import { Product } from '../../models/producto.model';
+import { ProductsService } from '../../services/productos.service';
+import { CarritoService } from '../../services/carrito.service';
+import { ProductCardComponent } from '../product-card/product-card.component';
+import { CarritoComponent } from '../carrito/carrito.component';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [ProductCardComponent],
+  imports: [ProductCardComponent, CarritoComponent],
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css'],
 })
 export class CatalogoComponent {
-  private readonly productsService = inject(ProductsService);
-  private readonly platformId = inject(PLATFORM_ID);
+  products = signal<Product[]>([]);
+  inStockCount = computed(() => this.products().filter(p => p.inStock).length);
 
-  readonly products: Signal<Product[]> = toSignal(
-    isPlatformBrowser(this.platformId)
-      ? this.productsService.getAll()
-      : of([]),
-    { initialValue: [] }
-  );
+  constructor(
+    private productsService: ProductsService,
+    private carritoService: CarritoService
+  ) {
+    this.productsService.getAll().subscribe({
+      next: (data) => this.products.set(data),
+      error: (err) => console.error('Error cargando XML:', err),
+    });
+  }
+
+  agregar(producto: Product) {
+    this.carritoService.agregar(producto);
+  }
 }
