@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, OnInit, inject } from '@angular/core';
 import { Product } from '../../models/producto.model';
 import { ProductsService } from '../../services/productos.service';
 import { CarritoService } from '../../services/carrito.service';
@@ -9,20 +9,28 @@ import { CarritoComponent } from '../carrito/carrito.component';
   selector: 'app-catalogo',
   standalone: true,
   imports: [ProductCardComponent, CarritoComponent],
+  providers: [ProductsService, CarritoService],
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css'],
 })
-export class CatalogoComponent {
-  products = signal<Product[]>([]);
-  inStockCount = computed(() => this.products().filter(p => p.inStock).length);
+export class CatalogoComponent implements OnInit {
 
-  constructor(
-    private productsService: ProductsService,
-    private carritoService: CarritoService
-  ) {
-    this.productsService.getAll().subscribe({
-      next: (data) => this.products.set(data),
-      error: (err) => console.error('Error cargando XML:', err),
+  private productsService = inject(ProductsService);
+  private carritoService = inject(CarritoService);
+
+  productos: Product[] = [];
+  inStockCount = computed(() => 
+    this.productos.filter(p => p.inStock).length
+  );
+
+  products: Product[] = [];
+  ngOnInit(): void {
+    this.productsService.getProductos().subscribe({
+      next: (data) => {
+        this.products = data;
+        console.log('Productos recibidos:', data);
+      },
+      error: (err) => console.error('Error al obtener productos:', err),
     });
   }
 
