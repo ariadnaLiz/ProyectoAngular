@@ -1,0 +1,21 @@
+<article class="card">
+  <img class="img" [src]="producto.imagen" [alt]="producto.nombre" />
+
+  <div class="body">
+    <div class="top">
+      <h3 class="title">{{ producto.nombre }}</h3>
+      <span class="price">$ {{ producto.precio }}</span>
+    </div>
+
+    <p class="meta">{{ producto.categoria }}</p>
+    <p class="desc">{{ producto.descripcion }}</p>
+
+    <p class="stock" [class.out]="!producto.inStock">
+      @if (producto.inStock) { En stock } @else { Agotado }
+    </p>
+
+    <button class="btn" [disabled]="!producto.inStock" (click)="onAdd()">
+      Agregar al carrito
+    </button>
+  </div>
+</article>

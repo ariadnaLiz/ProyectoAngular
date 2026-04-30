@@ -1,0 +1,96 @@
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(201, 160, 154, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(201, 160, 154, 0.25);
+}
+
+.img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #5a4a42;
+}
+
+.price {
+  background: #fce4ec;
+  color: #c9a09a;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #c4a882;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: #9e8880;
+  line-height: 1.5;
+}
+
+.stock {
+  font-size: 0.8rem;
+  color: #a8d5ba;
+  font-weight: bold;
+}
+
+.stock.out {
+  color: #f4a9a8;
+}
+
+.btn {
+  margin-top: auto;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f9c6c9, #fde2cc);
+  color: #5a4a42;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

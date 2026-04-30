@@ -11,22 +11,22 @@
       "projectType": "application",
       "schematics": {},
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "frontend/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
+            "browser": "frontend/src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               { "glob": "**/*", "input": "public" },
-              { "glob": "**/*", "input": "src/assets", "output": "assets" }
+              { "glob": "**/*", "input": "frontend/assets", "output": "assets" }
             ],
-            "styles": ["src/styles.css"],
-            "server": "src/main.server.ts",
+            "styles": ["frontend/src/styles.css"],
+            "server": "frontend/src/main.server.ts",
             "outputMode": "server",
-            "ssr": { "entry": "src/server.ts" }
+            "ssr": { "entry": "frontend/src/server.ts" }
           },
           "configurations": {
             "production": {

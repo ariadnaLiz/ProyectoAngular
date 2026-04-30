@@ -1,0 +1,25 @@
+<article class="card">
+  <div class="img-wrapper">
+    <img class="img" [src]="producto.imagen" [alt]="producto.nombre" />
+    <span class="category-badge">{{ producto.categoria }}</span>
+  </div>
+
+  <div class="body">
+    <div class="top">
+      <h3 class="title">{{ producto.nombre }}</h3>
+      <span class="price">${{ producto.precio }}</span>
+    </div>
+
+    <p class="desc">{{ producto.descripcion }}</p>
+
+    <div class="footer">
+      <span class="stock" [class.out]="!producto.inStock">
+        @if (producto.inStock) {
+          <span class="dot"></span> En stock
+        } @else {
+          <span class="dot"></span> Agotado
+        }
+      </span>
+    </div>
+  </div>
+</article>

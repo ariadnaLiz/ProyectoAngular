@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fdf6f0;
+  color: #5a4a42;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+}

@@ -1,0 +1,19 @@
+<div class="catalogo">
+  <h2>Skincare</h2>
+  <p class="subtitulo">✦ cuida tu piel, cuídate a ti ✦</p>
+
+  @if (productos().length === 0) {
+    <p>Cargando productos...</p>
+  }
+
+  <div class="productos-grid">
+    @for (p of productos(); track p.id) {
+      <app-product-card
+        [producto]="p"
+        (agregar)="agregar(p)">
+      </app-product-card>
+    }
+  </div>
+</div>
+
+<app-carrito></app-carrito>

@@ -1,0 +1,103 @@
+.cart {
+  background: #fff5f5;
+  border-top: 2px solid #fce4ec;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #c9a09a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.empty {
+  text-align: center;
+  color: #c4a882;
+  font-style: italic;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(201, 160, 154, 0.1);
+}
+
+.line {
+  color: #5a4a42;
+  font-size: 0.9rem;
+}
+
+.total {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #c9a09a;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f9c6c9, #fde2cc);
+  color: #5a4a42;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+
+.btn-paypal {
+  background: #ffc439;
+  color: #111;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-paypal:hover {
+  background: #f2b800;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.danger {
+  background: #fce4ec;
+  color: #e57373;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+.btn.purple {
+  background: linear-gradient(135deg, #e8d5f5, #d4eaf7);
+  color: #8a6fa8;
+}
