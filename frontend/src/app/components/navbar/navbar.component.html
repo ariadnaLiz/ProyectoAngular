@@ -1,0 +1,42 @@
+<nav class="navbar">
+  <div class="container">
+    <h1 class="logo" (click)="irInicio()">✦ SKINCARE</h1>
+    
+    <div class="carrito-icon" (click)="togglePreview()">
+      🛒
+      @if (carritoService.carrito().length > 0) {
+        <span class="badge">{{ carritoService.carrito().length }}</span>
+      }
+    </div>
+  </div>
+
+  <!-- Preview flotante -->
+  @if (mostrarPreview) {
+    <div class="preview-overlay" (click)="togglePreview()"></div>
+    <div class="preview-carrito">
+      <h3>Tu Carrito</h3>
+      
+      @if (carritoService.carrito().length === 0) {
+        <p class="vacio">El carrito está vacío</p>
+      } @else {
+        <ul class="preview-items">
+          @for (item of carritoService.carrito(); track item.id) {
+            <li>
+              <span>{{ item.nombre }}</span>
+              <span class="precio">MX${{ item.precio | number:'1.2-2' }}</span>
+            </li>
+          }
+        </ul>
+        
+        <div class="preview-total">
+          <strong>Total:</strong>
+          <strong>MX${{ carritoService.total() | number:'1.2-2' }}</strong>
+        </div>
+        
+        <button class="btn-ver" (click)="irAlCarrito()">
+          Ver Carrito Completo
+        </button>
+      }
+    </div>
+  }
+</nav>

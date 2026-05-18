@@ -4,12 +4,12 @@ import { Product } from '../../models/producto.model';
 import { ProductsService } from '../../services/productos.service';
 import { CarritoService } from '../../services/carrito.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { CarritoComponent } from '../carrito/carrito.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [ProductCardComponent, CarritoComponent],
+  imports: [ProductCardComponent, NavbarComponent],
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css'],
 })

@@ -1,0 +1,86 @@
+<div class="seguimiento-page">
+  @if (loading()) {
+    <div class="loading">
+      <h2>Procesando tu pago...</h2>
+      <div class="spinner"></div>
+    </div>
+  }
+
+  @if (error() && !loading()) {
+    <div class="error-box">
+      <h2>❌ Error en el pago</h2>
+      <p>Hubo un problema al procesar tu pago.</p>
+      <button class="btn" (click)="volverInicio()">Volver al Inicio</button>
+    </div>
+  }
+
+  @if (!loading() && !error() && paymentDetails()) {
+    <div class="confirmacion">
+      <div class="header-success">
+        <div class="icon-success">✓</div>
+        <h1>¡Pedido Confirmado!</h1>
+        <p class="orden-id">Orden #{{ orderId() }}</p>
+      </div>
+
+      <!-- Tracking -->
+      <div class="tracking-section">
+        <h2>Seguimiento del Pedido</h2>
+        <div class="timeline">
+          @for (estado of estados; track estado.id) {
+            <div class="timeline-item" [class.active]="estado.id <= estadoActual()" [class.current]="estado.id === estadoActual()">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>{{ estado.nombre }}</h3>
+                <p>{{ estado.fecha }}</p>
+              </div>
+            </div>
+          }
+        </div>
+        <p class="estimado">Fecha estimada de entrega: {{ getFechaEstimada() }}</p>
+      </div>
+
+      <!-- Desglose -->
+      <div class="desglose-section">
+        <h2>Desglose de Compra</h2>
+        
+        <div class="productos-list">
+          @for (producto of productos(); track producto.id) {
+            <div class="producto-item">
+              <span>{{ producto.nombre }}</span>
+              <span>MX${{ producto.precio }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="totales">
+          <div class="linea">
+            <span>Subtotal</span>
+            <span>MX${{ subtotal() }}</span>
+          </div>
+          <div class="linea">
+            <span>Envío</span>
+            <span>MX${{ envio }}</span>
+          </div>
+          <div class="linea">
+            <span>IVA (16%)</span>
+            <span>MX${{ iva() }}</span>
+          </div>
+          <div class="linea total">
+            <strong>Total Pagado</strong>
+            <strong>MX${{ total() }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acciones -->
+      <div class="acciones">
+        <button class="btn-primary" (click)="exportarXML()">
+          📄 Descargar Factura XML
+        </button>
+        <button class="btn-secondary" (click)="volverInicio()">
+          Continuar Comprando
+        </button>
+      </div>
+    </div>
+  }
+</div>

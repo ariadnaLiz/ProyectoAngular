@@ -15,15 +15,19 @@ async function getAccessToken() {
     },
     body: 'grant_type=client_credentials'
   });
+
   const data = await response.json();
+
   if (!response.ok) {
     throw new Error(`Error obteniendo access token: ${JSON.stringify(data)}`);
   }
+
   return data.access_token;
 }
 
 async function createPaypalOrder(orderData) {
   const accessToken = await getAccessToken();
+
   const body = {
     intent: 'CAPTURE',
     purchase_units: [{
@@ -39,13 +43,21 @@ async function createPaypalOrder(orderData) {
       },
       items: orderData.items.map(item => ({
         name: item.nombre,
-        quantity: String(item.cantidad),
+        quantity: String(item.cantidad || 1),
         unit_amount: {
           currency_code: 'MXN',
           value: Number(item.precio).toFixed(2)
         }
       }))
-    }]
+    }],
+   application_context: {
+  return_url: 'http://localhost:4200/carrito',
+  cancel_url: 'http://localhost:4200/carrito',
+  brand_name: 'Skincare Shop',
+  landing_page: 'LOGIN',
+  user_action: 'PAY_NOW',
+  shipping_preference: 'NO_SHIPPING'  // ← AGREGA ESTO
+}
   };
 
   const response = await fetch(`${paypalConfig.baseUrl}/v2/checkout/orders`, {
@@ -56,15 +68,19 @@ async function createPaypalOrder(orderData) {
     },
     body: JSON.stringify(body)
   });
+
   const data = await response.json();
+
   if (!response.ok) {
     throw new Error(`Error creando orden PayPal: ${JSON.stringify(data)}`);
   }
+
   return data;
 }
 
 async function capturePaypalOrder(orderId) {
   const accessToken = await getAccessToken();
+
   const response = await fetch(
     `${paypalConfig.baseUrl}/v2/checkout/orders/${orderId}/capture`,
     {
@@ -75,10 +91,13 @@ async function capturePaypalOrder(orderId) {
       }
     }
   );
+
   const data = await response.json();
+
   if (!response.ok) {
     throw new Error(`Error capturando orden PayPal: ${JSON.stringify(data)}`);
   }
+
   return data;
 }
 

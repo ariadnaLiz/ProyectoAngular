@@ -1,0 +1,62 @@
+<div class="carrito-page">
+  <h1>Tu Carrito de Compras</h1>
+
+  @if (carritoService.carrito().length === 0) {
+    <div class="vacio-state">
+      <p>🛒 Tu carrito está vacío</p>
+      <button class="btn" (click)="continuarComprando()">Continuar Comprando</button>
+    </div>
+  } @else {
+    <div class="carrito-grid">
+
+      <!-- Productos -->
+      <div class="productos-section">
+        @for (item of carritoService.carrito(); track item.id) {
+          <div class="producto-row">
+            <img [src]="item.imagen" [alt]="item.nombre">
+            <div class="info">
+              <h3>{{ item.nombre }}</h3>
+              <p class="categoria">{{ item.categoria }}</p>
+            </div>
+            <div class="precio-col">
+              <span class="precio">${{ item.precio | number:'1.2-2' }}</span>
+            </div>
+            <button class="btn-eliminar" (click)="quitar(item.id)">×</button>
+          </div>
+        }
+
+        <button class="btn-vaciar" (click)="vaciar()">Vaciar Carrito</button>
+      </div>
+
+      <!-- Resumen -->
+      <div class="resumen-section">
+        <h2>Resumen del Pedido</h2>
+
+      <div class="linea">
+        <span>Subtotal ({{ carritoService.carrito().length }} productos)</span>
+        <span>${{ subtotal() | number:'1.2-2' }}</span>
+      </div>
+
+      <div class="linea">
+        <span>Envío</span>
+        <span>${{ envio | number:'1.2-2' }}</span>
+      </div>
+
+      <div class="linea total">
+        <strong>Total</strong>
+        <strong>${{ total() | number:'1.2-2' }}</strong>
+      </div>
+
+        <!-- Botón PayPal -->
+      <button class="btn-pagar" (click)="pagar()">
+        Pagar con PayPal
+      </button>
+
+        <button class="btn-continuar" (click)="continuarComprando()">
+          Continuar Comprando
+        </button>
+      </div>
+
+    </div>
+  }
+</div>

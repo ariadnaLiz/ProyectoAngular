@@ -1,0 +1,151 @@
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #fce4ec;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(201, 160, 154, 0.1);
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #c9a09a;
+  letter-spacing: 4px;
+  cursor: pointer;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.carrito-icon {
+  position: relative;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.carrito-icon:hover {
+  transform: scale(1.1);
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #f9c6c9;
+  color: #5a4a42;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 200;
+}
+
+.preview-carrito {
+  position: fixed;
+  top: 80px;
+  right: 2rem;
+  width: 350px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(201, 160, 154, 0.3);
+  z-index: 201;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preview-carrito h3 {
+  color: #c9a09a;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.vacio {
+  color: #9e8880;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.preview-items {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.preview-items li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #fce4ec;
+  font-size: 0.9rem;
+}
+
+.preview-items li span {
+  color: #5a4a42;
+}
+
+.precio {
+  color: #c9a09a !important;
+  font-weight: bold;
+}
+
+.preview-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 2px solid #fce4ec;
+  font-size: 1.1rem;
+  color: #c9a09a;
+}
+
+.btn-ver {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f9c6c9, #fde2cc);
+  color: #5a4a42;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-ver:hover {
+  opacity: 0.85;
+}
